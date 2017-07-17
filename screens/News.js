@@ -1,26 +1,27 @@
 import React, {Component} from "react";
-import {View, Text} from "react-native";
+import {View, Text, Animated} from "react-native";
 import {Icon} from 'react-native-elements';
 
-class BookTour extends Component {
+class News extends Component {
   static navigationOptions = {
-    title:'Book Tour',
-    tabBarIcon:({tintColor}) => (
+    title: "News",
+    tabBarIcon: ({tintColor}) => (
       <Icon
-        name='heartbeat'
+        name='newspaper-o'
         size={30}
         type='font-awesome'
         color={tintColor}
       />
     )
   };
+
   render() {
     return (
       <View>
-      <Text>Book tour</Text>
+        <Text>News</Text>
       </View>
     );
   }
 }
 
-export default BookTour;
+export default News;

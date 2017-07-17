@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {View, ScrollView, Text, Dimensions} from 'react-native';
-import {Button} from 'react-native-elements';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -10,21 +9,16 @@ class Slide extends Component {
       return (
         <View
           key={index}
-          style={[styles.slideStyle, {backgroundColor: slide.color}]}
+          style={[styles.slideStyle]}
         >
-          <Text style = {styles.lastTextStyle}>{slide.text}</Text>
-          <Button
-            buttonStyle = {styles.btnStyle}
-            title={"Book now"}
-            onPress={this.props.onSlidesComplete}
-          />
+          <Text style = {styles.textStyle}>{slide.text}</Text>
         </View>
       )
     }else {
       return (
         <View
           key={index}
-          style={[styles.slideStyle, {backgroundColor: slide.color}]}
+          style={styles.slideStyle}
         >
           <Text style = {styles.textStyle}>{slide.text}</Text>
         </View>
@@ -47,24 +41,16 @@ class Slide extends Component {
 
 const styles = {
   slideStyle: {
-    flex: 1,
+    flex: 4,
     justifyContent: 'center',
     alignItems: 'center',
     width:SCREEN_WIDTH
   },
   textStyle:{
-    fontSize:20,
-    color:'#fff'
-  },
-  lastTextStyle:{
-    fontSize:20,
-    color:'#000'
-  },
-  btnStyle:{
-    width:'100%',
-    marginTop:10,
-    backgroundColor :"#39B54A",
-    borderRadius:8
+    fontSize:24,
+    color:'#fff',
+    textAlign:'center',
+    backgroundColor: 'rgba(0,0,0,0)'
   }
 };
 
